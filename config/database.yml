@@ -1,0 +1,25 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: verifier_development
+  pool: 5
+  username: postgres
+  password: root
+  
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: verifier_test
+  pool: 5
+  username: postgres
+  password: root
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: verifier_production
+  pool: 5
+  username: postgres
+  password: root
