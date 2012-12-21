@@ -1,14 +1,12 @@
 class StaticPagesController < ApplicationController
-	def index
-		@var = "It works!"
-		
-	end
+layout "store_layout"
+	
 
-	def admin
-		
-	end
+  def about
+  	
+  end
 
-	def login
-		render :layout => 'login_layout'			
-  	end
+  def home
+    @new_products = Product.in_stock.order("created_at DESC").limit(4)
+  end
 end

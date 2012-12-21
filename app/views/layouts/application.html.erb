@@ -9,35 +9,19 @@
 </head>
 <body>
   <%= render 'layouts/header' %>
-
-  
-
-    <div class="row">
-          <% flash.each do |name, msg| %>
-            <div class="alert alert-<%= name %>">
-              <a class="close" data-dismiss="alert">×</a>
-              <%= msg %>
-            </div>
-          <% end %>
-        
-    </div>
+  <%= render 'layouts/msgs' %>
     <%= yield %>
 
   <div>
     <% if user_signed_in? %>
       <%= image_tag current_user.avatar.url(:thumb) if current_user.avatar %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
+      Logged in as <strong><%= current_user.email %></strong>.      
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
       <%= link_to "Login", new_user_session_path %>
     <% end %>
-  </div>
-      
+  </div>    
   
   <%= render 'layouts/footer' %>
-
-
 </body>
 </html>

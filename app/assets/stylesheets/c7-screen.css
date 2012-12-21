@@ -1,0 +1,286 @@
+/*
+*************************************************
+
+Philadelphia
+Sansom Street
+General Screen Styles
+
+Created by the friendly folks at Happy Cog
+http://www.happycog.com/
+
+*************************************************
+
+
+font-family: bello-pro, georgia, serif;
+font-family: league-gothic, helvetica, arial, sans-serif; 
+
+
+colors: 
+borders/buttons: pink #d81055 #d81055
+button-hover : #3da197 #3da197
+button-hover-text : #fff #fff 
+button-text: #fff #fff
+headings: #fff #fff 
+links: peach #f2e4cf  #f2e4cf 
+link hovers: turquoise #3da197  #f2e4cf 
+fancy headline: turquoise #3da197  #3da197 
+
+
+tuquoise: #3d9f95;
+peach: #f2e4cf;
+pink: #d81055;
+
+border-top: 1px solid #605039;
+*/
+
+/*-------------------------------------------
+    General Selectors
+-------------------------------------------*/
+body { background: #2c231b url(c7-bg.jpg) no-repeat center top;  color: #fff; font: normal 62.5% "Trebuchet MS", Tahoma, Arial, sans-serif; }
+.home { background-image: url(c7-home-bg.jpg); }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #f2e4cf; text-decoration: none; }
+	h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus,  h4 a:hover, h4 a:focus, h5 a:hover, h5 a:focus, h6 a:hover, h6 a:focus { text-decoration: underline; }
+h2, .main h2, .full h2, .full h3, .main h3, h4, h5, h6 { color: #fff; }
+.blog-meta h3 { font-size: 2.4em; }
+.post .blog-meta h3 a, .post .blog-meta h2 a { font-size: 1em; }
+.main h2, .full h2, .full h3, .main h3 { font-size: 3.6em; }
+.product-container h2 { color: #3da197;}
+.wf-active h2.brdr-btm {font-size: 45px; }
+
+p, ul, dl, ol { margin: 0 0 1.5em; font-size: 16px; }
+#footer p, #footer ul {  font-size: 12px; }
+
+blockquote { margin: 0 0 1.2em; padding: 0.5em 1em 0; }
+
+p a { text-decoration: underline; }
+p a:hover, p a:focus { text-decoration: none; }
+
+a { text-decoration: none;}
+a:hover, a:focus { text-decoration: underline; }
+
+input, textarea { font-family: "Trebuchet MS", Tahoma, Arial, sans-serif; }
+
+table { margin-bottom: 20px; }
+
+th { background: none; text-transform: uppercase; }
+label, .form-heading, label, .form-heading { color: #fff; }
+
+/*-------------------------------------------
+    GLobal Combinations
+-------------------------------------------*/
+
+#cartform th, #cartform td, #search-results ol, .comment-list li, .brdr-btm, .post  { border-bottom: 1px solid #605039; }
+
+blockquote { border-left: 1px solid #605039;  }
+
+input[type="text"], textarea, .collection .product-name a  {  border: 1px solid #605039; }
+
+/*-------------------------------------------
+    Header
+-------------------------------------------*/
+
+.home #header { margin-bottom: 10px; }
+#header { margin: 14px 0 26px; padding-bottom: 14px; }
+	#header form { float: right; margin: 0; }
+	#header form p { margin: 10px 0 0; }
+	#header h1 { padding: 0 0 20px 0; }
+	#header #page-title { padding-bottom: 2px; margin-bottom: 0; }
+		#header h1 a { display: inline; color: #fff; }
+		#header h1 a:hover strong, #header h1 a:focus strong { text-decoration: none; color: #3da197; }
+		#header h1 a strong { font-weight: normal; font-size: 70px; margin-top: 10px; }
+	
+	#main-nav { width: 680px; }
+
+	#main-nav li { margin: 0; border-right: 1px solid #61605c; }
+		#main-nav li a { padding: 0 17px; font-size: 20px; color: #fff; display: inline-block; text-transform: uppercase; margin: 0 2px; border-left: 1px transparent solid; }
+		.wf-active #main-nav li a { font-size: 28px; }
+		#main-nav li.on a { background-color: #3da197; color: #fff; }
+			#main-nav li.on li a { background-color: transparent; }
+			#main-nav li.on li a:hover,  #main-nav li.on li a:focus { text-decoration: underline; }
+		
+		#main-nav li.with-dropdown a { padding-right: 40px; }
+		
+		#header .with-dropdown:hover ul { border: 1px solid #61605C; border-top: none; }
+			#header .with-dropdown:hover li a {  }
+			
+		#header .with-dropdown ul { background: #2c231b;  } 
+			#header .with-dropdown li a { font-size: 14px; padding: 10px 16px; font-family: "Trebuchet MS", Tahoma, Arial, sans-serif; text-transform: none;}
+				#main-nav .with-dropdown a:after { content: url(c7-li-on.png); right: 17px; top: -3px; }
+				#main-nav .with-dropdown.on a:after { content: url(c7-li-on-active.png); }
+				#main-nav .with-dropdown.on li a:after { content: ""; }
+	
+	#utility { position: absolute; right: 0; top: 8px; }
+		a.cart { color: #fff; display:inline-block; text-decoration:none;  }
+			.cart i, .cart b { padding: 3px 7px; display: inline-block; font-size: 14px; }
+			.cart i { font-style: normal; border-right: 1px solid #2c231b; }
+			.cart b { font-weight: normal; position: relative; top: -5px; left: -2px; font-size: 18px; }
+			.cart span { background: #000; display: inline-block; margin-left: 8px;  text-align: center;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+				border-radius: 4px; }
+			.cart span:hover { color: #fff; background: #3da197; }
+			
+			.cart span em { font-style: normal; display: block; font-size: 10px; text-transform: uppercase; }
+			.customer {font-size:14px; }
+	
+	form #searchtext, form #searchtext-2 { background-color: transparent; border: none; border-bottom: 1px solid #605039; padding: 9px 6px 2px; margin-right: 45px;
+		-moz-box-shadow: none;
+		-webkit-box-shadow: none;
+		box-shadow: none; }
+	#searchtext:focus, #searchtext-2:focus { background: transparent; color: #fff; }
+	#searchbutton, #searchbutton-2 { top: -14px; right: 0; }
+	#search label, #search-2 label { position: absolute; left: -60px; bottom: -6px; color: #fff; font-size: 14px; letter-spacing: -.035em; }
+	
+	#search-2 { padding-left: 60px; margin-top: 20px; }
+	
+	
+
+/*-------------------------------------------
+    Footer
+-------------------------------------------*/
+	#footer h2 { color: #fff; text-transform: uppercase; font-weight: 600; font-size: 14px; margin-bottom: 15px; }
+
+	#footer div.sub-floor { border-top: 1px solid #605039; }
+	
+	.payment-methods ul { margin-top: 20px; }
+		.useful-links li a { display: block; padding: 5px 0 6px; }
+	
+	.payment-methods img { border: none; }
+	
+	#footer a { font-weight: bold; }
+
+/*-------------------------------------------
+    Cart
+-------------------------------------------*/
+#cartform th { text-transform: none; font-size: 18px; font-weight: normal; }
+	#checkout h3 .checkout-meta { font-style: italic;}
+	#checkout h3 span { color: #fff; }
+	
+/*-------------------------------------------
+    Blog
+-------------------------------------------*/
+.comment-author { font-weight: 600; }
+.article-title {  font-size: 1.4em; }
+#comments label { font-size: 1em; }
+#paginate .current { background-color: #d81055 }
+#comments .comment-body p, #comments .comment-body  * { color: #fff; }
+
+/*-------------------------------------------
+    Collection
+-------------------------------------------*/
+
+.collection a { padding: 10px; background: none; text-decoration: none;}
+
+.collection a:hover, .collection a:focus {  background: none; }
+
+.product-name a { line-height: 1; font-size: 18px; margin-bottom: 10px; text-decoration: none; }
+.collection .product-name a:hover, .collection .product-name a:focus { background: #605039; }
+.collection .product-name a:hover strong { color: #fff; }
+
+/*-------------------------------------------
+    Product
+-------------------------------------------*/
+	.brand { font-size: 21px; text-transform: uppercase; margin-bottom: 15px; }
+		.desc p { font-size: 16px; line-height: 1.6; }
+	.product-container form { margin-bottom: 0; }
+	.product-container h2 { font-size: 40px; }
+	.price { font-size: 2.4em; margin-bottom: 0; }
+	.product-mid .price { margin-bottom: 10px; }
+	.product-type { font-size: 1.4em; }
+	
+	.wf-active .product-mid .price span { font-size: 40px; }
+	
+	.full { border-top: 1px solid #605039; padding-top: 20px; }
+	
+	.item img { 
+		-moz-box-shadow: 0 2px 5px rgba(0,0,0, .4);
+		-webkit-box-shadow: 0 2px 5px rgba(0,0,0, .4);
+		box-shadow: 0 2px 5px rgba(0,0,0, .4); }
+	
+	.item .product-name a:hover, .item .product-name a:focus { text-decoration: underline; }
+	
+/*-------------------------------------------
+    Slideshow
+-------------------------------------------*/
+
+.hero-callout { right: 20px; bottom: 5px;  }
+	.hero-callout .inner-wrapper { padding: 31px 36px 74px; background: #000; background: rgba(0,0,0,.75); margin-top:-94px; width: 298px; }
+		.hero-callout p.product-name { margin-bottom: 10px; }
+		.hero-callout p.product-name a { color: #fff; font-size: 36px; text-decoration: none; line-height: 1.2; }
+		.hero-callout p.product-name a:hover, .hero-callout p.product-name a:focus  { color: #d81055; text-decoration: none; }
+		.hero-callout p { color: #fff; font-size: 16px; }
+		.hero-callout .act, .cart-desc .act { color: #fff; font-size: 1em; }
+		
+		.hero-callout .hero-callout-meta { background: url(c7-ticket-top.png) center top no-repeat; text-align: center; font-size: 14px; font-weight: bold; text-transform: uppercase; color: #242424; float:right; margin-right: -50px; padding: 20px 15px 0;
+			-moz-border-radius: 5px 5px 0 0;
+			-webkit-border-radius: 5px 5px 0 0;
+			border-radius: 5px 5px 0 0; 
+			 }
+		.hero-callout .hero-callout-meta .price { display: block; font-size: 34px; line-height:.75; background: url(c7-ticket-bottom.png) center bottom no-repeat; text-transform: none; position: relative; top: 7px; margin-top: -5px; left:-15px; width:100%; padding: 0 15px 25px;
+			-moz-border-radius: 0 0 5px 5px;
+			-webkit-border-radius: 0 0 5px 5px;
+			border-radius: 0 0 5px 5px; 
+		 color: #d81055;
+			}
+		
+		.hero-callout .act { float: left; }
+		.hero-callout .cta, .wf-active .hero-callout .cta { font-size: 28px; letter-spacing: 0; padding: 0 30px 0 0; background: none; color: #d81055; }
+		.hero-callout .cta:hover, .wf-active .hero-callout .cta:hover, .hero-callout .cta:focus, .wf-active .hero-callout .cta:focus { color: #fff; }
+.bx-window { 
+	-moz-box-shadow: 0 2px 5px rgba(0,0,0, .4);
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0, .4);
+	box-shadow: 0 2px 5px rgba(0,0,0, .4); }
+
+/*-------------------------------------------
+    General Styles
+-------------------------------------------*/
+
+#footer li, #footer p, #footer .sub-floor p, .blog-meta .date, #comments dl span, #comments p, .collection strong, #checkout h3 .checkout-meta  { color: #8c8375; }
+
+.sidebar h2, .meta h3 { border-bottom: 2px #605039 solid; padding-bottom: 10px; font-size: 2.2em; margin-bottom: 3px; color: #fff; text-transform: uppercase;  }
+.wf-active .sidebar h2, .wf-active .meta h3 { font-size: 28px; }
+.sidebar li, .meta li { margin: 0; border-bottom: 1px solid #605039;}
+	.sidebar li a, .meta li a { padding: 12px 0 11px; }
+	.sidebar li a:hover, .sidebar li a:focus, .meta li a:hover, .meta li a:focus { color: #f2e4cf; }
+
+.wf-active .cta, .cta { line-height: 1; font-size: 21px; letter-spacing: 1px; padding: 6px 12px; background: #d81055; color: #fff; text-decoration: none; text-transform: uppercase; display: inline-block; cursor: pointer; 
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px; }
+.cta:hover, .cta:focus { color: #fff; background-color: #3da197;}
+.cta:active { background-image: none; }
+.cta:hover { 
+	-webkit-transition: background-color 50ms ease-in; 
+	-moz-transition: background-color 50ms ease-in;
+	-o-transition: background-color 50ms ease-in;
+	transition: background-color 50ms ease-in; }
+input.cta { border: none; }
+
+.alt-cta { font-weight: bold; }
+#cartform .alt-cta { font-weight: normal; text-decoration: underline; }
+
+.caption { font-family: "Trebuchet MS", Tahoma, Arial, sans-serif; font-size: 12px !important; }
+	
+.brdr-btm:last-child { border-bottom: none; }
+
+.useful-links li:first-of-type a { padding-top: 0; }
+
+#content { margin-bottom: 0; padding-bottom: 20px; background: url(c7-bg-bottom.jpg) center bottom no-repeat; min-height: 340px; }
+
+em.search-term { color: #fff; }
+
+input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+table { border-left: 1px solid #CCC; border-top: 1px solid #CCC; }
+th, td { border-right: 1px solid #CCC; }
+/*-------------------------------------------
+   Typekit / Typography
+-------------------------------------------*/
+.main h2, .full h2, h2.brdr-btm, .full h3, .main h3, .hero-callout .hero-callout-meta .price, .product-mid .price span { font-family: bello-pro, georgia, serif; visibility: visible; } 
+.wf-loading  .main h2, .wf-loading  .full h2, .wf-loading h2.brdr-btm,  .wf-loading  .full h3, .wf-loading .main h3, .wf-loading .product-mid .price span { visibility: hidden; } 
+
+#main-nav li a, .sidebar h2, .meta h3, .cta, .wf-active .cta { font-family: league-gothic, "Trebuchet MS", Tahoma, Arial, sans-serif; visibility: visible; }
+.wf-loading #main-nav, .wf-loading #main-nav a, .wf-loading .sidebar h2, .wf-loading .meta h3,  .wf-loading .cta  { visibility: hidden; } 
+
+.hero-callout p.product-name a, .product-container h2, #page-title strong { font-family: quatro, "Trebuchet MS", Tahoma, Arial, sans-serif; visibility: visible; }
+.wf-loading .hero-callout p.product-name a, .wf-loading .product-container h2, .wf-loading #page-title strong { visibility: hidden; }

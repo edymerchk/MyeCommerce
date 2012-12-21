@@ -1,12 +1,18 @@
 MyeCommerce::Application.routes.draw do
 	
-  	scope "admin" do
-		resources :products, :categories
-	end
+    namespace "admin" do
+		  resources :products, :categories
+	  end
 
-  	match '/admin',   to: 'static_pages#admin'  
+  	match '/admin',   to: 'admin/products#index'  
+  	match '/about',   to: 'static_pages#about'  
 
-  	root to: 'static_pages#index'
+  	root to: 'static_pages#home'
+
+  
+
+  	match '/categories/:id',   to: 'categories#show', :as => "show"
+  	match '/products/:id',   to: 'products#show', :as => "show"
 
   	devise_for :users
     

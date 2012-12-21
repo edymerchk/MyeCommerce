@@ -1,15 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
-
-<p>
-  <b>Color:</b>
-  <%= @category.color %>
-</p>
 
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div id="content">
+	<!---Begin Page Specific Content-->		
+<h2 class="brdr-btm">
+    <%=@category.name %> 
+</h2>
+	
+
+	<div class="collection">
+		<% @products.each do |product|%>			
+			<div class="product-name ">
+				<%= link_to image_tag(product.picture.url,:size => "150x150"), show_path(product)%>  
+				<em><%=product.name %> </em>
+				<strong><%=number_to_currency(product.sale_price)%></strong>
+			</div>				
+		<% end %>
+		<% if @products== 0 %>
+			<div>There is no productus in stock in this category</div>
+		<% end %>					
+	</div>	
+	<!---End Page Specific Content-->
+</div>

@@ -14,6 +14,7 @@ gem "twitter-bootstrap-rails" #styles from bootrsrap
 gem 'country_select' # 
 gem 'bootstrap-datepicker-rails' # datepicker
 gem "paperclip", "~> 3.0" #attachments
+gem "cancan" #authorization
 
 
 

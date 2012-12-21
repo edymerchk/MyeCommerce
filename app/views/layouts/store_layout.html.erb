@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<%= stylesheet_link_tag "print",  :media => "print" %>
+	<%= stylesheet_link_tag "base",  :media => "all" %>
+	<%= stylesheet_link_tag "c7-screen",  :media => "all" %>
+	<%= stylesheet_link_tag "customer",  :media => "all" %>
+	<%= stylesheet_link_tag "bootstrap-datepicker",  :media => "all" %>
+
+		
+	<%= javascript_include_tag "application", controller_name %>
+</head>
+<body>	
+	
+	<div id="wrapper">
+		<%= render 'layouts/header_store' %>
+		<%= render 'layouts/msgs' %>
+		<%= yield %>
+	</div>
+	<div id="footer-wrapper">	
+  		<%= render 'layouts/footer_store' %>
+  	</div>
+
+</body>
+</html>
