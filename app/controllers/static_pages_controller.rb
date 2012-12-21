@@ -3,4 +3,12 @@ class StaticPagesController < ApplicationController
 		@var = "It works!"
 		
 	end
+
+	def admin
+		
+	end
+
+	def login
+		render :layout => 'login_layout'			
+  	end
 end

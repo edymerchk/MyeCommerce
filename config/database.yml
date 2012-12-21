@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: verifier_development
+  database: myEcommerce_development
   pool: 5
   username: postgres
   password: root
@@ -11,7 +11,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: verifier_test
+  database: myEcommerce_test
   pool: 5
   username: postgres
   password: root
@@ -19,7 +19,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: verifier_production
+  database: myEcommerce_production
   pool: 5
   username: postgres
   password: root

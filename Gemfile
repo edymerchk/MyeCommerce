@@ -2,7 +2,19 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'pg' # posgrest
-gem 'devise' #authentication 
+gem 'devise' #authentication
+gem 'simple_form' # forms made easy
+gem 'thin' #fix warnings msgs
+gem 'quiet_assets', :group => :development #fix assets msgs
+gem 'faker' #generate fake things
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails" #styles from bootrsrap
+gem 'country_select' # 
+gem 'bootstrap-datepicker-rails' # datepicker
+gem "paperclip", "~> 3.0" #attachments
+
 
 
 # Gems used only for assets and not required
@@ -14,6 +26,4 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'thin' #fix warnings msgs
-gem 'quiet_assets', :group => :development #fix assets msgs
 
