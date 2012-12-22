@@ -11,7 +11,7 @@
       <li class="with-dropdown"><a href="#" title="">Catalog</a>
         <ul>
           <% Category.all.each do |category|%>        
-            <li> <%= link_to category.name, show_path(category)%></li>        
+            <li> <%= link_to category.name, category_path(category)%></li>        
           <% end%>                                
         </ul>
       </li>
