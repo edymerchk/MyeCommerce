@@ -30,17 +30,16 @@ class Admin::CategoriesController < ApplicationController
 
   def create
 
-    load_and_authorize_resource
-    @category = Category.new(params[:category])
+     @category = Category.new(params[:category])
     flash[:success] = "Category was successfully created." if @category.save
-    redirect_to(categories_path)
+    redirect_to(admin_categories_path)
 
   end
 
   def update
     @category = Category.find(params[:id])
     flash[:success] = "Category was successfully updated." if @category.update_attributes(params[:category])
-    redirect_to(categories_path)
+    redirect_to(admin_categories_path)
   end
 
   def destroy
@@ -48,7 +47,7 @@ class Admin::CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to admin_categories_path }
       format.json { head :no_content }
     end
   end

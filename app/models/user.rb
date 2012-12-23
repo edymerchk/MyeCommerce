@@ -9,5 +9,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday, :country, :avatar, :admin
 
   has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "100x100>" }
+  has_one :cart, dependent: :destroy
+
+  def my_cart
+  	cart=Cart.find_by_user_id(self.id)
+  	cart= Cart.create(user_id: self.id) unless cart  	
+  	cart
+  end
   
 end

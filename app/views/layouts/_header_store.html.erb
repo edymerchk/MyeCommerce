@@ -15,7 +15,8 @@
           <% end%>                                
         </ul>
       </li>
-      <li><a href="#" title="">My Account</a></li>
+      
+      <li><%= link_to "My Cart", cart_path(current_user.my_cart)%></a></li>      
       <li><%= link_to "About Us", about_path %></a></li>      
       <li><%= link_to "Admin", admin_path %></a></li>
       
@@ -34,9 +35,10 @@
           <%= link_to "Login", new_user_session_path %>
         <% end %>      
       </span>    
-      <a class="cart" href="/cart">
-        <span><i><em>items</em> 0</i> <b>$0.00</b></span>
-      </a>
+
+      <%= link_to cart_path(current_user.my_cart), :class => "cart" do %> 
+        <span><i><em>items</em> <%=current_user.my_cart.cart_count%></i> <b><%=number_to_currency(current_user.my_cart.cart_price)%></b></span>
+      <%end%>      
     </p>
     <form action="/search" method="get" id="search">
       <p>         

@@ -3,18 +3,13 @@ class CategoriesController < ApplicationController
 
    before_filter :authenticate_user!
    load_and_authorize_resource  
-
-
-  def index
-    @categories = Category.all
-    respond_with(@categories)
-
-  end
+   layout "store_layout"
 
 
   def show
     @category = Category.find(params[:id])
-    respond_with(@category)
+    @products = @category.products
+
   end
 
 end

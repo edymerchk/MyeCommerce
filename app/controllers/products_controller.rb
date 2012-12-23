@@ -4,10 +4,7 @@ class ProductsController < ApplicationController
   load_and_authorize_resource  
 
   respond_to :html, :json, :js
-  def index
-    @products = Product.all
-    respond_with(@products)
-  end
+
 
   def show
     @product = Product.find(params[:id])
