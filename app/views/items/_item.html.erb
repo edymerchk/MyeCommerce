@@ -1,0 +1,14 @@
+<% product = item.product %>
+<tr>
+	<td class="cart-details">					
+		<span class="cart-image"><%=image_tag(product.picture, :size => "100x100")  %></span>
+		<h3><%=product.name%></h3>					
+	</td>
+	<td class="cart-price"><%=number_to_currency(product.sale_price )%></td>
+	<td class="cart-price">
+		<%=item.qty%>
+	</td>
+	<td class="total"><%=number_to_currency(item.total_price)%></td>
+	<td class="total"><%=link_to "Delete Item", remove_item_path(product)%></td>
+</tr>
+	

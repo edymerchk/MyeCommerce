@@ -10,15 +10,15 @@
     <ol id="main-nav">
       <li class="with-dropdown"><a href="#" title="">Catalog</a>
         <ul>
-          <% Category.all.each do |category|%>        
-            <li> <%= link_to category.name, category_path(category)%></li>        
-          <% end%>                                
+           <%= print_categories %>
         </ul>
       </li>
       
       <li><%= link_to "My Cart", cart_path(current_or_guest_user.my_cart)%></a></li>      
-      <li><%= link_to "About Us", about_path %></a></li>      
+      <li><%= link_to "About Us", about_path %></a></li>           
+      <% if can? :manage, :all %>
       <li><%= link_to "Admin", admin_path %></a></li>
+      <% end %>
       
     
     </ol>    
@@ -40,12 +40,22 @@
         <span><i><em>items</em> <%=current_or_guest_user.my_cart.cart_count%></i> <b><%=number_to_currency(current_or_guest_user.my_cart.cart_price)%></b></span>
       <%end%>      
     </p>
-    <form action="/search" method="get" id="search">
-      <p>         
-          <label for="searchtext">Search</label>
-          <input type="search" id="searchtext" name="q" value="" class="">
-          <input id="searchbutton" type="image" src="http://cdn.shopify.com/s/files/1/0108/3862/t/4/assets/c7-search-btn.gif?0" alt="Search">          
+
+   <div id="search-results">
+
+
+
+
+
+     
+    <form action="/search" method="get" id="search-2">
+      <p>          
+          <input type="search" id="searchtext-2" name="q" value="" class="">
+          <input id="searchbutton-2" type="image" src="http://cdn.shopify.com/s/files/1/0108/3862/t/4/assets/c7-search-btn.gif?0" alt="Search">
+          
       </p>
     </form>
+
+</div>
     
   </div>

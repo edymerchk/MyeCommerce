@@ -1,7 +1,8 @@
 class Admin::CategoriesController < ApplicationController
   respond_to :html, :json, :js
 
-   before_filter :authenticate_user!
+
+   before_filter :get_category, :only => [:show, :edit, :update, :destroy]
    load_and_authorize_resource  
 
 
@@ -13,8 +14,7 @@ class Admin::CategoriesController < ApplicationController
 
 
   def show
-    @category = Category.find(params[:id])
-    respond_with(@category)
+     respond_with(@category)
   end
 
 
@@ -24,7 +24,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
+    
   end
 
 
@@ -37,26 +37,18 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.find(params[:id])
+    
     flash[:success] = "Category was successfully updated." if @category.update_attributes(params[:category])
     redirect_to(admin_categories_path)
   end
 
   def destroy
-    @category = Category.find(params[:id])
     @category.destroy
-
-    respond_to do |format|
-      format.html { redirect_to admin_categories_path }
-      format.json { head :no_content }
-    end
+    redirect_to admin_categories_path    
   end
 
-  def show_category
-
+  def get_category
     @category = Category.find(params[:id])
-    @products = @category.products.in_stock
-    render :layout => 'store_layout'
-    
   end
+
 end

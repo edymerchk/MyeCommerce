@@ -5,6 +5,6 @@ class Item < ActiveRecord::Base
 
 
   def total_price
-  	self.product.sale_price*self.qty  	
+  	self.product.price * self.qty  	
   end
 end

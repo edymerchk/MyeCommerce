@@ -9,6 +9,9 @@ gem "therubyracer"
 gem 'country_select' # plugin of simple forms 
 gem "paperclip", "~> 3.0" #attachments
 gem "cancan" #authorization
+gem 'kaminari' # pagination
+gem 'sunspot_rails' # search
+gem 'sunspot_solr' # search
 
 
 group :development do
@@ -16,6 +19,7 @@ group :development do
   gem "binding_of_caller" # enable the REPL and local/instance variable inspection.
   gem 'thin' #fix warnings msgs
   gem 'quiet_assets' #fix assets msgs
+  gem 'rails-footnotes', '>= 3.7.9', :group => :development
 end
 
 # Gems used only for assets and not required

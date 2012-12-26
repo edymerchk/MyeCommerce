@@ -4,38 +4,22 @@ class Cart < ActiveRecord::Base
   has_many	:products, :through => :items
 
 
-  def add(product)  
-
-  	item = Item.where("cart_id = ? AND product_id = ?", self.id, product.id)
-  	if item.size > 0
-  		#item.qty=+1 #FIX THIS
-  	else
-  	item = Item.create(cart_id: self.id, product_id: product.id, qty: 1)
-  	end
-  	
+  def add_item(product)  
+    item = Item.find_or_initialize_by_cart_id_and_product_id(self.id, product.id)
+    item.qty = (item.qty || 0) + 1
+    item.save   
   end
 
-  def update
-  	
-  end
-
-  def clean_all
-  	
+  def remove_item(product)
+    item = Item.find_by_cart_id_and_product_id("cart_id = ? AND product_id = ?", self.id, product.id)
+    item.destroy_all
   end
 
   def cart_count    
-    res =0
-    self.items.each do |item|
-      res+=item.qty
-    end
-    res     
+    items.to_a.sum(&:qty) 
   end
 
   def cart_price
-    res =0
-    self.items.each do |item|
-      res+=item.total_price
-    end
-    res    
+    items.to_a.sum(&:total_price)    
   end
 end
