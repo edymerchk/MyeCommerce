@@ -16,7 +16,7 @@
         </ul>
       </li>
       
-      <li><%= link_to "My Cart", cart_path(current_user.my_cart)%></a></li>      
+      <li><%= link_to "My Cart", cart_path(current_or_guest_user.my_cart)%></a></li>      
       <li><%= link_to "About Us", about_path %></a></li>      
       <li><%= link_to "Admin", admin_path %></a></li>
       
@@ -36,8 +36,8 @@
         <% end %>      
       </span>    
 
-      <%= link_to cart_path(current_user.my_cart), :class => "cart" do %> 
-        <span><i><em>items</em> <%=current_user.my_cart.cart_count%></i> <b><%=number_to_currency(current_user.my_cart.cart_price)%></b></span>
+      <%= link_to cart_path(current_or_guest_user.my_cart), :class => "cart" do %> 
+        <span><i><em>items</em> <%=current_or_guest_user.my_cart.cart_count%></i> <b><%=number_to_currency(current_or_guest_user.my_cart.cart_price)%></b></span>
       <%end%>      
     </p>
     <form action="/search" method="get" id="search">

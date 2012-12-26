@@ -19,11 +19,8 @@
 					<h3><%=product.name%></h3>					
 				</td>
 				<td class="cart-price"><%=number_to_currency(product.sale_price )%></td>
-				<td class="updater act">
-					<input type="text" class="field" name="updates[156205642]" id="updates_156205642" value="1" onfocus="this.select();">
-					<input type="hidden" name="id" value="156205642">
-					<input type="submit" name="update" value="Update" class="alt-cta"> or 
-					<a href="/cart/change/156205642?quantity=0" class="remove alt-cta">remove</a>
+				<td class="cart-price">
+					<%=item.qty%>
 				</td>
 				<td class="total"><%=number_to_currency(item.total_price)%></td>
 			</tr>
@@ -32,9 +29,9 @@
 		</table>
 
 		<div id="checkout">
-				<h3>Total: <span>$265.00 USD</span><span class="checkout-meta">excluding tax &amp; shipping</span></h3>
+				<h3>Total: <span><%=number_to_currency(@cart.cart_price)%></span><span class="checkout-meta">excluding tax &amp; shipping</span></h3>
 				<p class="act">
-					<input type="button" id="getout" name="checkout" class="cta" value="Proceed to Checkout">
+					<input type="button" class="cta" value="Proceed to Checkout">
 				</p>			
 		</div>
 

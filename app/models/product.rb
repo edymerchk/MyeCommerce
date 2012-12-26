@@ -7,6 +7,6 @@ class Product < ActiveRecord::Base
 
   has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }
   
-  scope :in_stock, where("qty > ?", 0)
+ 	scope :in_stock, where("qty > ?", 0)
 
 end

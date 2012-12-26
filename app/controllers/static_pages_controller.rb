@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
 layout "store_layout"
+
 	
 
   def about

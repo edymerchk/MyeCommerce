@@ -3,8 +3,8 @@ class CartsController < ApplicationController
   layout "store_layout"
   def show
 
-  	cart=current_user.my_cart
-  	@items = cart.items
+  	@cart=current_or_guest_user.my_cart
+  	@items = @cart.items
 
   end
 

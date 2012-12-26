@@ -3,14 +3,11 @@
 <div id="content">
     <!---Begin Page Specific Content--> 
   <div class="product-container">
-
       <div class="product-detail">
-
       <h2><%=@product.name%></h2>
       <div class="product-mid">     
         <p class="price"><span><%=number_to_currency(@product.sale_price)%></span> <del><%=number_to_currency(@product.sale_price*1.1)%></del></p>    
-        <p class="stock">In stock</p>     
-            
+        <p class="stock">In stock</p>             
         <%=button_to "Add to Cart", add_item_path(@product), :class =>"cta"  %>
 
       </div><!-- end product-mid -->      
