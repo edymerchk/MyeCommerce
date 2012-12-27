@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
     size: { in: 1..500.kilobytes }
   
-  validates_presence_of :password, :password_confirmation, :first_name, :last_name, :birthday, :country
+  validates_presence_of :password, :password_confirmation, :first_name, :last_name, :country
   validates_uniqueness_of :email
 
   def my_cart
