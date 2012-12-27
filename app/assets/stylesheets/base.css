@@ -15,6 +15,27 @@ http://www.happycog.com/
     General Selectors
 -------------------------------------------*/
 
+
+.button{
+	width: 300px;
+	height: 30px;
+	font-size: 18px;
+
+}
+
+.avatar{
+
+}
+.alert{
+	font-size: 18px;
+}
+.alert-alert{
+	color: red;
+}
+.alert-notice{
+	color: green;
+}
+
 * { margin: 0; padding: 0; line-height: 1.5; }
 
 em { font-style: italic; }
@@ -47,7 +68,7 @@ sub, sup { line-height: 0; }
 address { font-size: 12px; font-style: normal; margin: 0 0 1.5em; }
 
 input, textarea { color: #999; font: 12px Georgia, 'Times New Roman', serif; }
-input:focus, textarea:focus {  color: #333; font-style: normal; }
+input:focus, textarea:focus {  color: #E4DADA; font-style: normal; }
 
 .full h2, .main h2 { margin-bottom: 1em; }
 h2.brdr-btm, h3.brdr-btm, h4.brdr-btm, h5.brdr-btm, h6.brdr-btm { line-height: 1.2; padding-bottom: 30px; margin-bottom: 30px; }

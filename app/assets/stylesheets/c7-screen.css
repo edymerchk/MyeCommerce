@@ -131,8 +131,9 @@ input[type="text"], textarea, .collection .product-name a  {  border: 1px solid 
 	#searchtext:focus, #searchtext-2:focus { background: transparent; color: #fff; }
 	#searchbutton, #searchbutton-2 { top: -14px; right: 0; }
 	#search label, #search-2 label { position: absolute; left: -60px; bottom: -6px; color: #fff; font-size: 14px; letter-spacing: -.035em; }
-	
 	#search-2 { padding-left: 60px; margin-top: 20px; }
+	
+
 	
 	
 

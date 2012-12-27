@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>MyeCommerce-Administration</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -10,7 +10,19 @@
 <body>
   <%= render 'layouts/header' %>
   <%= render 'layouts/msgs' %>
-    <%= yield %>
+    
+
+
+    <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+    </div>
+    <div class="span8">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
   <div>
     <% if user_signed_in? %>

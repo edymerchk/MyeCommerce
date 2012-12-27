@@ -6,26 +6,32 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
 	User.destroy_all
 
-	User.create!(email:    "user@user.com",
-	                 password: "password",
-	                 password_confirmation: "password",
+	avatar=File.open(File.join(Rails.root, "db/images/noavatar.png"))
+
+	User.create!(email:    "edyhack@gmail.com",
+	                 password: "katalina",
+	                 password_confirmation: "katalina",
 	                 first_name: "Luis",
 	                 last_name: "Laverde",
 	                 country: "Colombia",
 	                 birthday: "12/27/1988",
-	                 admin: false
+	                 admin: false,
+	                 avatar: avatar
 	                 )  
 	#default Admin
 	User.create!(email:    "admin@admin.com",
-	                 password: "password",
-	                 password_confirmation: "password",
+	                 password: "katalina",
+	                 password_confirmation: "katalina",
 	                 first_name: "Edimerchk",
 	                 last_name: "Laverde",
 	                 country: "Colombia",
 	                 birthday: "12/27/1988",
-	                 admin: true
+	                 admin: true,
+	                 avatar: avatar
 	                 ) 
 
 	Category.destroy_all                 
@@ -35,6 +41,7 @@
 	  Category.create!(name: "Hats", color: "brown")
 	  Category.create!(name: "T-shirts", color: "red")
 	  Category.create!(name: "Jackets", color: "black")
+
 
 	  Product.destroy_all  
 
@@ -47,12 +54,13 @@
 
 	  	Product.create!(name: Faker::Company.name,
 	  				 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id laoreet dui. Sed iaculis libero id eros hendrerit pulvinar. Nunc quis tortor felis, nec faucibus felis. Suspendisse interdum convallis nisl, nec feugiat enim tincidunt a. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-	  				 on_sale: true,
+	  				 on_sale: [true, false].sample,
 	  				 price: price,
 	  				 sale_price: price*(Random.rand(80..100)/100.0),
 	  				 qty:Random.rand(5),
 	  				 category_id: Random.rand(1..5),
 	  				 picture: picture
+	  				
 
 	  			)
 	  	

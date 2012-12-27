@@ -10,8 +10,9 @@ gem 'country_select' # plugin of simple forms
 gem "paperclip", "~> 3.0" #attachments
 gem "cancan" #authorization
 gem 'kaminari' # pagination
-gem 'sunspot_rails' # search
-gem 'sunspot_solr' # search
+#gem 'sunspot_rails' # search
+#gem 'sunspot_solr' # search
+gem 'colorize' #colors for debug!!
 
 
 group :development do

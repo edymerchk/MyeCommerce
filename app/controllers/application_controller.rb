@@ -27,7 +27,9 @@ class ApplicationController < ActionController::Base
   # creating one as needed
   def guest_user
 
+   # User.find(create_guest_user.id)
     User.find(session[:guest_user_id] ||= create_guest_user.id) # original line
+
   end
 
   protected

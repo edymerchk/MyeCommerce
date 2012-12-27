@@ -10,11 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
 
-  	def search
-		@search = Product.search do
-			fulltext params[:search]
-		end
-		@products = @search.results
-
+  def search
+    @products = Product.search(params[:search])		
 	end
 end

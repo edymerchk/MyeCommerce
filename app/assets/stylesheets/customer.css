@@ -36,7 +36,10 @@ th { background-color: #FAFAFA; border-bottom: 1px solid #CCCCCC; color: #222222
 td { border-bottom: 1px solid #EEEEEE; line-height: 22px; padding: 5px; vertical-align: middle; }
 */
 
-#search { display:none; }
+#search { background-color: transparent; border: none; border-bottom: 1px solid #605039; padding: 9px 6px 2px; margin-right: 4px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
 
 input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
 button, input, select, textarea { margin: 0; }

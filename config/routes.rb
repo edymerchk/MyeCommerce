@@ -15,14 +15,9 @@ MyeCommerce::Application.routes.draw do
 		  resources :products, :categories
 	  end
 
-    #front-end Store
+    #front-end Store 
 
-  
-
-
-    match '/add_item/:id',   to: 'items#add', :as => "add_item"
-    match '/remove_item/:id',   to: 'items#remove', :as => "remove_item"
-
+    resources :items, :only => [:create, :destroy]
     resources :carts, only: [:show, :destroy]
     
     resources :products, :only => [:show]

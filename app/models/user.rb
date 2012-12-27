@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday, :country, :avatar, :admin
 
-  has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "100x100>" }
+  has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>" }
   has_one :cart, dependent: :destroy
 
   # VALIDATIONS
@@ -30,6 +30,10 @@ class User < ActiveRecord::Base
 
   def my_cart
     Cart.find_or_create_by_user_id(self.id)
+  end
+
+  def full_name
+    [first_name, last_name].join(' ')
   end
   
 end

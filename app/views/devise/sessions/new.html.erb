@@ -18,7 +18,9 @@
 		  	</div>
 		</div>
 		<div class="action_bottom">
-		  	<%= f.button :submit, "Login", :input_html => {:class => 'btn'} %>
+		  	<%= f.button :submit, "Login", :input_html => {:class => 'btn-big'} %>
+		  	<br>
+		  	<br>
 		  	<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
   			<%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
 			<% end -%>

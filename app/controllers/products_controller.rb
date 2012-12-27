@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 	layout "store_layout"
 
 	respond_to :html, :json, :js
+	before_filter :authenticate_user!
 
 
 	def show
