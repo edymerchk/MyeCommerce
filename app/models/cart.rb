@@ -11,8 +11,8 @@ class Cart < ActiveRecord::Base
   end
 
   def remove_item(product)
-    item = Item.find_by_cart_id_and_product_id("cart_id = ? AND product_id = ?", self.id, product.id)
-    item.destroy_all
+    item = Item.find_by_cart_id_and_product_id( self.id, product.id)
+    item.destroy
   end
 
   def cart_count    
