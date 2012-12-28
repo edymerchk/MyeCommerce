@@ -28,8 +28,9 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :password_confirmation, :first_name, :last_name, :country
   validates_uniqueness_of :email
 
+
   def my_cart
-    Cart.find_or_create_by_user_id(self.id)
+    @cart ||= Cart.find_or_create_by_user_id(self.id)
   end
 
   def full_name

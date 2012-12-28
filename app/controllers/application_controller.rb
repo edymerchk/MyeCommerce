@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
    # if user is logged in, return current_user, else return guest_user
   def current_or_guest_user
-    if current_user && User.find(current_user.id)
+    if current_user
       if session[:guest_user_id]
         logging_in
         guest_user.destroy
