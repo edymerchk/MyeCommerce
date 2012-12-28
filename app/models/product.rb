@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   has_many	:carts, :through => :items
   has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }
 
-  validates_presence_of :description, :name, :price, :qty, :sale_price
+  validates_presence_of :description, :name, :price, :qty
   validates_uniqueness_of :name
   validates_numericality_of :price, :qty, greater_than_or_equal_to: 0
 

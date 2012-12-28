@@ -29,7 +29,7 @@ class Admin::ProductsController < AdminController
   def create
     
     flash[:success] = "Product was successfully created." if @product.save
-    respond_with(@product)
+    redirect_to(admin_products_path)
   end
 
 

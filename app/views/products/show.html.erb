@@ -6,16 +6,14 @@
       <div class="product-detail">
       <h2><%=@product.name%></h2>
       <div class="product-mid">     
+
         <p class="price"> 
-          <% if @product.on_sale? %>    
-            <span><%=number_to_currency(@product.sale_price)%></span>
+          <span><%=number_to_currency(@product.total_price)%></span>
+          <% if @product.on_sale? %>                
             <del><%=number_to_currency(@product.price)%></del> 
-          <% else %>
-            <span><%=number_to_currency(@product.price)%></span> 
           <% end %>            
         </p>        
-          <p class="stock">In stock</p>         
-          
+          <p class="stock">In stock</p>            
         <%=button_to "Add to Cart", items_path(id: @product.id), :class =>"cta"  %>
       </div><!-- end product-mid -->      
       <div class="desc">
