@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
   def my_cart
     @cart ||= Cart.find_or_create_by_user_id(self.id)
   end
+  
 
   def full_name
     [first_name, last_name].join(' ')
