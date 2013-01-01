@@ -1,0 +1,61 @@
+<div id="header">
+  <div id="page-title">
+    <h1>
+      <a href="/">
+        <strong>My eCommerce</strong>
+      </a>
+    </h1>
+    <h3><em>Your Staunch Store</em></h3>
+  </div>
+  <ol id="main-nav">
+    <li class="with-dropdown"><a href="#" title="">Catalog</a>
+      <ul>
+       <%= print_categories %>
+     </ul>
+   </li>
+   <% if current_user %>
+   <li><%= link_to "My Cart", cart_path(current_user.my_cart)%></a></li>      
+   <% end %>
+   <li><%= link_to "About Us", about_path %></a></li>           
+   <% if can? :manage, :all %>
+   <li><%= link_to "Admin", admin_path %></a></li>
+   <% end %>
+
+
+ </ol>    
+ <p id="utility">
+
+  <span class="customer">
+    <% if user_signed_in? %>
+
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+    <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> |
+    <%= link_to "Login", new_user_session_path %>
+    <% end %>      
+  </span>    
+  <% if current_user %>
+  <%= link_to cart_path(current_or_guest_user.my_cart), :class => "cart" do %> 
+  <span><i><em>items</em> <%=current_or_guest_user.my_cart.cart_count%></i> <b><%=number_to_currency(current_or_guest_user.my_cart.cart_price)%></b></span>
+  <%end%>
+  <%= image_tag current_user.avatar.url(:thumb), class: "avatar" %>
+  <%end%>      
+</p>
+
+
+
+
+
+  <%= form_tag search_path do %>
+ <p>
+  <%= text_field_tag :search, params[:search], :class => "searchtext-2" %>
+  <%= submit_tag "Search", :type => :image, :src => "http://cdn.shopify.com/s/files/1/0108/3862/t/4/assets/c7-search-btn.gif" %>
+  
+</p>
+<% end %>
+
+
+</div>

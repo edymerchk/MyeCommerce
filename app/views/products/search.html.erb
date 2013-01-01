@@ -1,0 +1,13 @@
+<div id="content">
+	<!---Begin Page Specific Content-->		
+<h2 class="brdr-btm">
+    Search Result
+</h2>
+	<div class="collection">
+		<%= render @products %>
+		<% if @products== 0 %>
+			<div>There is no productus matching this search</div>
+		<% end %>					
+	</div>	
+	<!---End Page Specific Content-->
+</div>

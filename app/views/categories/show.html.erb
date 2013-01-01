@@ -1,0 +1,13 @@
+<div id="content">
+	<!---Begin Page Specific Content-->		
+<h2 class="brdr-btm">
+    <%=@category.name %> 
+</h2>
+	<div class="collection">
+		<%= render @products %>
+		<% if @products== 0 %>
+			<div>There is no productus in stock in this category</div>
+		<% end %>					
+	</div>	
+	<!---End Page Specific Content-->
+</div>

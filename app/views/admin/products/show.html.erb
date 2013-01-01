@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Qty:</b>
+  <%= @product.qty %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+<p>
+  <b>On sale:</b>
+  <%= @product.on_sale %>
+</p>
+
+<p>
+  <b>Sale price:</b>
+  <%= @product.sale_price %>
+</p>
+
+<p>
+    <%= image_tag @product.picture.url if @product.picture %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_admin_product_path(@product) %> |
+<%= link_to 'Back', admin_products_path %>

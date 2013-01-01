@@ -1,0 +1,28 @@
+
+
+<div id="content">
+    <!---Begin Page Specific Content--> 
+  <div class="product-container">
+      <div class="product-detail">
+      <h2><%=@product.name%></h2>
+      <div class="product-mid">     
+
+        <p class="price"> 
+          <span><%=number_to_currency(@product.total_price)%></span>
+          <% if @product.on_sale? %>                
+            <del><%=number_to_currency(@product.price)%></del> 
+          <% end %>            
+        </p>        
+          <p class="stock">In stock</p>            
+        <%=button_to "Add to Cart", items_path(id: @product.id), :class =>"cta"  %>
+      </div><!-- end product-mid -->      
+      <div class="desc">
+        <p><%=@product.description%></p>
+      </div>  
+    </div><!-- end .product-description-->
+    <div id="gallery">  
+      <%= image_tag(@product.picture.url, :size => "480x480" ) %> <!--Here I can put a modalbox or fancybox-->  
+    </div><!-- end #gallery-->
+  </div><!-- end .product-container-->
+  <!---End Page Specific Content-->
+</div>

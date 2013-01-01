@@ -1,0 +1,28 @@
+<div id="content">
+		<!---Begin Page Specific Content-->
+	<h2>My Cart</h2>
+	<form id="cartform">
+
+		<table>
+			<tbody><tr>
+				<th>Description</th>
+				<th>Price Each</th>
+				<th>Quantity</th>
+				<th>Total</th>
+				<th>Action</th>
+			</tr>
+			<%= render @items %>				
+			</tbody>
+		</table>
+
+		<div id="checkout">
+				<h3>Total: <span><%=number_to_currency(@cart.cart_price)%></span><span class="checkout-meta">excluding tax &amp; shipping</span></h3>
+				<p class="act">
+					<span><%= link_to 'Clear Cart', cart_path(@cart), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+					<input type="button" class="cta" value="Proceed to Checkout">
+				</p>			
+		</div>
+	</form>			
+		<!---End Page Specific Content-->
+</div>

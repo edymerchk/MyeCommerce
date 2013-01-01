@@ -1,0 +1,44 @@
+
+<div id="customer">
+    <div class="template_header">
+      <h2 class="title">Sign up</h2>
+    </div>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div  class="form-inputs">   
+        <div class="clearfix large_form"> 
+          <%= f.input :email, :required => true, :autofocus => true, :input_html => {:class => 'large'} %>                
+        </div>
+        <div class="clearfix large_form"> 
+          <%= f.input :first_name, :required => true, :input_html => {:class => 'large'} %>
+        </div>
+        <div class="clearfix large_form"> 
+          <%= f.input :last_name, :required => true, :input_html => {:class => 'large'} %>
+        </div>
+        <div class="clearfix large_form"> 
+          <%= f.input :birthday, :required => true, :as => :string, :input_html => {:class => 'large'} %>
+        </div>
+        <div class="clearfix large_form"> 
+          <%= f.input :country, :required => true , :input_html => {:class => 'large'}%>
+        </div>
+        <div class="clearfix large_form"> 
+          <%= f.input :password, :required => true, :input_html => {:class => 'large'} %>
+        </div>
+        <div class="clearfix large_form"> 
+          <%= f.input :password_confirmation, :required => true, :input_html => {:class => 'large'} %>
+        </div>
+        <div class="clearfix large_form"> 
+          <%= f.input :avatar, :as => :file, :label => "Avatar"%>
+        </div>
+      </div>
+
+      <div class="action_bottom">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+</div>
+
+
+
+

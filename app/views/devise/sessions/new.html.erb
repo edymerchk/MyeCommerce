@@ -1,0 +1,33 @@
+
+
+<div id="customer">
+    <div class="template_header">
+      <h2 class="title">Login</h2>
+    </div>
+  
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		<div class="form-inputs">
+			<div id="login_email" class="clearfix large_form">
+		    	<%= f.input :email, :required => true, :autofocus => true, :input_html => {:class => 'large'} %>
+		    </div>
+		    <div id="login_password" class="clearfix large_form">
+		    	<%= f.input :password, :required => true, :input_html => {:class => 'large'} %>
+		    </div>
+		    <div id="login_password" class="clearfix large_form">
+		    	<%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+		  	</div>
+		</div>
+		<div class="action_bottom">
+		  	<%= f.button :submit, "Login", :input_html => {:class => 'btn-big'} %>
+		  	<br>
+		  	<br>
+		  	<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+  			<%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+			<% end -%>
+		</div>
+		
+	<% end %>
+</div>
+
+
+
