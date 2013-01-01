@@ -32,6 +32,7 @@ group :development do
   gem 'rails-footnotes', '>= 3.7.9' # good information
   gem 'rspec-rails'
   gem 'guard-rspec'
+  gem 'faker' #generate fake things
 end
 
 # Gems used only for assets and not required
