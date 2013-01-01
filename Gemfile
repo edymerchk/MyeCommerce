@@ -35,16 +35,14 @@ group :development do
   gem 'faker' #generate fake things
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
+
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-datepicker-rails' # datepicker
   gem "twitter-bootstrap-rails" #styles from bootrsrap
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS  
-end
+
 
 
 
