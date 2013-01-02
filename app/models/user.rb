@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   validates_attachment :avatar,
     content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
-    size: { in: 1..500.kilobytes }
+    size: { in: 1..500.kilobytes }, :storage => :s3, :s3_credentials => S3_CREDENTIALS
   
   validates_presence_of :password, :password_confirmation, :first_name, :last_name, :country
   validates_uniqueness_of :email

@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
 
   validates_attachment :picture,
     content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
-    size: { in: 1..500.kilobytes }
+    size: { in: 1..500.kilobytes }, :storage => :s3, :s3_credentials => S3_CREDENTIALS
   
  	scope :in_stock, where("qty > ?", 0)
 
