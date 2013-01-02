@@ -12,6 +12,7 @@ gem "cancan" #authorization
 gem 'kaminari' # pagination
 gem 'colorize' #colors for debug!!
 gem 'jquery-rails'
+gem 'aws-sdk' #amazon web services sdk
 
 
 group :test do
@@ -27,8 +28,8 @@ end
 group :development do
   gem "better_errors" # really better errors
   gem "binding_of_caller" # enable the REPL and local/instance variable inspection.
-  gem 'thin' #fix warnings msgs
-  gem 'quiet_assets' #fix assets msgs
+  #gem 'thin' #fix warnings msgs
+  #gem 'quiet_assets' #fix assets msgs
   gem 'rails-footnotes', '>= 3.7.9' # good information
   gem 'rspec-rails'
   gem 'guard-rspec'

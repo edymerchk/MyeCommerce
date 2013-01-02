@@ -3,12 +3,18 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday, :country, :avatar, :admin
 
-  has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>" }
+  
+  if Rails.env.production?
+    has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>" }, :storage => :s3, :s3_credentials => S3_CREDENTIALS  
+  else
+    has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>" }
+  end
+
   has_one :cart, dependent: :destroy
 
   # VALIDATIONS
@@ -16,14 +22,14 @@ class User < ActiveRecord::Base
 
 
   validates :email, :presence => true, length: { maximum: 255 }, :format => { with: VALID_EMAIL_REGEX },
-            :uniqueness => { case_sensitive: false }
+  :uniqueness => { case_sensitive: false }
 
   before_save { |user| user.email = email.downcase }
 
 
   validates_attachment :avatar,
-    content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
-    size: { in: 1..500.kilobytes }
+  content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
+  size: { in: 1..500.kilobytes }
   
   validates_presence_of :password, :password_confirmation, :first_name, :last_name, :country
   validates_uniqueness_of :email

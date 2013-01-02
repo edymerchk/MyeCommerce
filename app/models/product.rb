@@ -4,18 +4,25 @@ class Product < ActiveRecord::Base
   belongs_to :category
   has_many 	:items
   has_many	:carts, :through => :items
-  has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }
 
-  validates_presence_of :description, :name, :price, :qty
-  validates_uniqueness_of :name
-  validates_numericality_of :price, :qty, greater_than_or_equal_to: 0
+  if Rails.env.production?
+   has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }, :storage => :s3, :s3_credentials => S3_CREDENTIALS
+ else
+   has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }
+ end
+
+ 
+
+ validates_presence_of :description, :name, :price, :qty
+ validates_uniqueness_of :name
+ validates_numericality_of :price, :qty, greater_than_or_equal_to: 0
 
 
-  validates_attachment :picture,
-    content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
-    size: { in: 1..500.kilobytes }
-  
- 	scope :in_stock, where("qty > ?", 0)
+ validates_attachment :picture,
+ content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
+ size: { in: 1..500.kilobytes }
+ 
+ scope :in_stock, where("qty > ?", 0)
 
   #searchable do
     #text :name, :description

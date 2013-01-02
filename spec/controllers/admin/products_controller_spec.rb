@@ -49,26 +49,30 @@ describe Admin::ProductsController do
 			end
 		end		
 	end
-	context "POST actions " do 
-	describe "POST #create -with valid attributes" do
-		it "saves the new product in the db" do
-			expect{
-				post :create, product: attributes_for(:product)
-				}.to change(Product, :count).by(1)
-			end
-			it "redirects to the home page" do
-				post :create, product: attributes_for(:product)
-				response.should redirect_to admin_products_path
-			end			
+	context "POST actions " do
+		before :each do			
+			@user = create(:user, admin: true)
+			sign_in @user 
 		end
-		describe "POST #create  with invalid attributes" do
-			it "does not save the product in the database" do
+
+		describe "POST #create -with valid attributes" do
+			it "saves the new product in the db" do
 				expect{
-					post :create,
-					product: attributes_for(:invalid_product)
-					}.to_not change(Product, :count)
+					post :create, product: attributes_for(:product)
+					}.to change(Product, :count).by(1)
+				end
+				it "redirects to the home page" do
+					post :create, product: attributes_for(:product)
+					response.should redirect_to admin_products_path
+				end			
+			end
+			describe "POST #create  with invalid attributes" do
+				it "does not save the product in the database" do
+					expect{
+						post :create,
+						product: attributes_for(:invalid_product)
+						}.to_not change(Product, :count)
 				end
 			end
-
 		end
 	end
