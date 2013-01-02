@@ -38,8 +38,8 @@
     <% end %>      
   </span>    
   <% if current_user %>
-  <%= link_to cart_path(current_or_guest_user.my_cart), :class => "cart" do %> 
-  <span><i><em>items</em> <%=current_or_guest_user.my_cart.cart_count%></i> <b><%=number_to_currency(current_or_guest_user.my_cart.cart_price)%></b></span>
+  <%= link_to cart_path(current_user.my_cart), :class => "cart" do %> 
+  <span><i><em>items</em> <%=current_user.my_cart.cart_count%></i> <b><%=number_to_currency(current_user.my_cart.cart_price)%></b></span>
   <%end%>
   <%= image_tag current_user.avatar.url(:thumb), class: "avatar" %>
   <%end%>      
