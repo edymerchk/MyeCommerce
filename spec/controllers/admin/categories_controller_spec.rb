@@ -17,7 +17,7 @@ describe Admin::CategoriesController do
 				get :index
 				response.should render_template :index
 			end
-		end 		
+		end 		 
 		describe 'GET #show' do
 			it "assigns the requested category to @category" do
 				get :show, id: @category
