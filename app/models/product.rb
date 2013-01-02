@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
   belongs_to :category
   has_many 	:items
   has_many	:carts, :through => :items
-  has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }
+  has_attached_file :picture, :styles => { :medium => "200x200>", :thumb => "100x100>" }, :storage => :s3, :s3_credentials => S3_CREDENTIALS
 
   validates_presence_of :description, :name, :price, :qty
   validates_uniqueness_of :name
@@ -13,7 +13,7 @@ class Product < ActiveRecord::Base
 
   validates_attachment :picture,
     content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
-    size: { in: 1..500.kilobytes }, :storage => :s3, :s3_credentials => S3_CREDENTIALS
+    size: { in: 1..500.kilobytes }
   
  	scope :in_stock, where("qty > ?", 0)
 

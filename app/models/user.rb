@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :birthday, :country, :avatar, :admin
 
-  has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>" }
+  has_attached_file :avatar, :styles => { :medium => "200x200>", :thumb => "80x80>" }, :storage => :s3, :s3_credentials => S3_CREDENTIALS
   has_one :cart, dependent: :destroy
 
   # VALIDATIONS
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   validates_attachment :avatar,
     content_type: { content_type: /^image\/.?(gif|png|jpg|jpeg)$/i },
-    size: { in: 1..500.kilobytes }, :storage => :s3, :s3_credentials => S3_CREDENTIALS
+    size: { in: 1..500.kilobytes }
   
   validates_presence_of :password, :password_confirmation, :first_name, :last_name, :country
   validates_uniqueness_of :email
