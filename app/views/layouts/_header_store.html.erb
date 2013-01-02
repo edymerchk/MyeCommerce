@@ -52,7 +52,7 @@
   <%= form_tag search_path do %>
  <p>
   <%= text_field_tag :search, params[:search], :class => "searchtext-2" %>
-  <%= submit_tag "Search", :type => :image, :src => "http://cdn.shopify.com/s/files/1/0108/3862/t/4/assets/c7-search-btn.gif" %>
+  <%= submit_tag "Search", type: "image", id: "search_btn",  src: "http://cdn.shopify.com/s/files/1/0108/3862/t/4/assets/c7-search-btn.gif" %>
   
 </p>
 <% end %>
