@@ -12,6 +12,7 @@ gem "cancan" #authorization
 gem 'kaminari' # pagination
 gem 'colorize' #colors for debug!!
 gem 'jquery-rails'
+gem 'aws-sdk' #amazon web services sdk
 
 
 group :test do
